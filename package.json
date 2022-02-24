@@ -1,5 +1,5 @@
 {
-  "name": "vue-form-ui",
+  "name": "vue-forms-ui",
   "version": "1.0.0",
   "description": "create form element",
   "private": false,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jiyuuki/vue-form-ui.git"
+    "url": "git+https://github.com/jiyuuki/vue-forms-ui.git"
   },
   "keywords": [
     "VueInput",
