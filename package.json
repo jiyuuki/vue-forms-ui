@@ -1,0 +1,31 @@
+{
+  "name": "vue-form-ui",
+  "version": "1.0.0",
+  "description": "create form element",
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiyuuki/vue-form-ui.git"
+  },
+  "keywords": [
+    "VueInput",
+    "VueSelect",
+    "Form",
+    "VueForm",
+    "vuejs",
+    "Element",
+    "Form",
+    "validating"
+  ],
+  "author": "Salma EL HAJRAOUI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiyuuki/vue-form-ui/issues"
+  },
+  "homepage": "https://github.com/jiyuuki/vue-form-ui#readme"
+}
