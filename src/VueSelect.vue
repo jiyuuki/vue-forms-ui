@@ -6,11 +6,13 @@
     {{ label }}
   </label>
   <select
+    v-model="modelValue"
     v-bind="{
       ...$attrs,
-      onChange: ($event) => {$emit('update:modelValue', $event.target.value)}
+      onChange: ($event) => {
+        $emit('update:modelValue', $event.target.value)
+      }
     }"
-    :value="modelValue"
     :class="seletClass"
   >
     <option
@@ -54,3 +56,4 @@ export default {
   }
 }
 </script>
+<style scoped></style>

@@ -6,11 +6,13 @@
     {{ label }}
   </label>
   <input
+    v-model="modelValue"
     v-bind="{
       ...$attrs,
-      onInput: ($event => {$emit('update:modelValue', $event.target.value)})
+      onInput: ($event => {
+        $emit('update:modelValue', $event.target.value)
+      })
     }"
-    :value="modelValue"
     :class="inputClass"
   >
 </template>
@@ -41,3 +43,4 @@ export default {
   }
 }
 </script>
+<style scoped></style>
