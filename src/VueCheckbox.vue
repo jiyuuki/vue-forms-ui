@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <input 
-      v-model="modelValue"
-      v-bind="$attrs"
-      @change="$emit('update.modelValue', $event.target.checked)"
-      type="checkbox"
-      :class="inputClass"
-    >
-    <label
-      v-show="label"
-      :class="labelClass"
-    >
-      {{ label }}
-    </label>
-  </div>
+   <label
+    v-show="label"
+    :class="labelClass"
+  >
+    {{ label }}
+  </label>
+  <input
+    v-model="modelValue"
+    v-bind="$attrs"
+    @change="$emit('update.modelValue', $event.target.checked)"
+    type="checkbox"
+    :class="inputClass"
+  >
 </template>
 <script>
   export default {
     name: 'VueCheckbox',
-    
+
     props: {
       label: {
         type: String,
