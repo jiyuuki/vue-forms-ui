@@ -24,6 +24,7 @@
       {{ option }}
     </option>
   </select>
+  <VueErrorMesssage :errorMesssage="errorMesssage" />
 </template>
 
 <script>
@@ -52,6 +53,10 @@ export default {
     options: {
       type: Array,
       required: true,
+    },
+    errorMesssage: {
+      type: String,
+      defalut: ''
     }
   }
 }

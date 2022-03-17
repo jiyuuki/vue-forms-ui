@@ -12,6 +12,7 @@
     type="checkbox"
     :class="inputClass"
   >
+  <VueErrorMesssage :errorMesssage="errorMesssage" />
 </template>
 <script>
   export default {
@@ -33,7 +34,11 @@
       modelValue: {
         type: Boolean,
         default: false
-      }
+      },
+      errorMesssage: {
+      type: String,
+      defalut: ''
+    }
     }
   }
 </script>

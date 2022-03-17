@@ -11,6 +11,7 @@
   >
     {{ label }}
   </label>
+  <VueErrorMesssage :errorMesssage="errorMesssage" />
 </template>
 
 <script>
@@ -29,6 +30,10 @@ export default {
     value: {
       type: [String, Number],
       default: ''
+    },
+    errorMesssage: {
+      type: String,
+      defalut: ''
     }
   }
 }

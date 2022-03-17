@@ -15,6 +15,7 @@
     }"
     :class="inputClass"
   >
+  <VueErrorMesssage :errorMesssage="errorMesssage" />
 </template>
 
 <script>
@@ -39,6 +40,10 @@ export default {
     modelValue: {
       type: [String, Number],
       default: '',
+    },
+    errorMesssage: {
+      type: String,
+      defalut: ''
     }
   }
 }
