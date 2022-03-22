@@ -8,6 +8,7 @@
     </span>
     <!-- add toggle function to show or hide children -->
     <!-- try to use a flat array -->
+    <!-- add and delete children -->
   </div>
   <div 
     v-if="hasChildren"
