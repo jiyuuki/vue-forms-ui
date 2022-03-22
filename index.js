@@ -7,6 +7,17 @@ const requireComponent = require.context(
   /\.vue$/
 )
 
+export const useValidate = (field, rules) => {
+  console.log({
+    field: field,
+    rules
+  })
+  if (field.value === null) {
+    return false
+  }
+  return true
+}
+
 export default {
   install(Vue, options) {
     requireComponent.keys().forEach(fileName => {
