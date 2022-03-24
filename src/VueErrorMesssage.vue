@@ -3,6 +3,7 @@
     {{ errorMesssage }}
   </p>
 </template>
+
 <script>
 export default {
   name: 'VueErrorMessage',
@@ -10,7 +11,7 @@ export default {
   props: {
     errorMesssage: {
       type: String,
-      defalut: ''
+      default: ''
     }
   }
 }

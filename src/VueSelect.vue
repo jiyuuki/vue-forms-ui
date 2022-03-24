@@ -6,7 +6,7 @@
     {{ label }}
   </label>
   <select
-    v-model="modelValue"
+    :value="modelValue"
     v-bind="{
       ...$attrs,
       onChange: ($event) => {
@@ -24,7 +24,9 @@
       {{ option }}
     </option>
   </select>
-  <VueErrorMesssage :errorMesssage="errorMesssage" />
+  <VueErrorMesssage
+    :error-messsage="errorMesssage"
+  />
 </template>
 
 <script>
@@ -56,9 +58,8 @@ export default {
     },
     errorMesssage: {
       type: String,
-      defalut: ''
+      default: ''
     }
   }
 }
 </script>
-<style scoped></style>

@@ -10,9 +10,9 @@
     <!-- try to use a flat array -->
     <!-- add and delete children -->
   </div>
-  <div 
+  <div
     v-if="hasChildren"
-    :style="{ marginLeft:  `${addSpacing}px`}"
+    :style="{ marginLeft: `${addSpacing}px`}"
   >
     <Tree
       v-for="child in branch.children"
@@ -24,10 +24,10 @@
 </template>
 
 <script>
-import { computed, onMounted, getCurrentInstance } from 'vue'
+import { computed } from 'vue'
 
 export default {
-  name: 'Tree',
+  name: 'VueTree',
 
   props: {
     branch: {
@@ -41,8 +41,7 @@ export default {
   },
   setup(props) {
     const hasChildren = computed(() => props.branch?.children?.length > 0)
-    const addSpacing = computed(() => props.spacing + 10 )
-    
+    const addSpacing = computed(() => props.spacing + 10)
     return {
       hasChildren,
       addSpacing

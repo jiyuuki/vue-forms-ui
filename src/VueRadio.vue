@@ -11,12 +11,16 @@
   >
     {{ label }}
   </label>
-  <VueErrorMesssage :errorMesssage="errorMesssage" />
+  <VueErrorMesssage
+    :error-messsage="errorMesssage"
+  />
 </template>
 
 <script>
 export default {
   name: 'VueRadio',
+
+  emits: ['update:modalValue'],
 
   props: {
     label: {
@@ -33,7 +37,7 @@ export default {
     },
     errorMesssage: {
       type: String,
-      defalut: ''
+      default: ''
     }
   }
 }
