@@ -1,9 +1,10 @@
 <template>
-  <input
+  <div>
+    <input
     v-model="modelValue"
-    :value="value"
-    @change="$emit('update:modalValue', value)"
     v-bind="$attrs"
+    :value="value"
+    @change="updateRadio"
     type="radio"
   >
   <label
@@ -11,16 +12,12 @@
   >
     {{ label }}
   </label>
-  <VueErrorMesssage
-    :error-messsage="errorMesssage"
-  />
+  </div>
 </template>
 
 <script>
 export default {
   name: 'VueRadio',
-
-  emits: ['update:modalValue'],
 
   props: {
     label: {
@@ -34,10 +31,17 @@ export default {
     value: {
       type: [String, Number],
       default: ''
-    },
-    errorMesssage: {
-      type: String,
-      default: ''
+    }
+  },
+
+  setup (props, { emit }) {
+    const updateRadio = (event) => {
+      const checked = event.target.checked
+      emit('update:modelValue', checked)
+    }
+
+    return {
+      updateRadio
     }
   }
 }

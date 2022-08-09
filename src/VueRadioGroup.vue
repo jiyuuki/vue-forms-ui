@@ -1,17 +1,17 @@
 <template>
-  <component
-    :value="modelValue"
-    @change="$emit('update:modelValue', option.value)"
-    v-for="option in options"
-    :key="option"
-    :is="vertical ? 'div' : 'span'"
-  >
-    <VueRadio
-      :label="option.label"
-      :value="option.value"
-      :name="name"
-    />
-  </component>
+    <component
+      :value="modelValue"
+      @change="$emit('update:modelValue', option.value)"
+      v-for="option in options"
+      :key="option"
+      :is="vertical ? 'div' : 'span'"
+    >
+      <VueRadio
+        :label="option.label"
+        :value="option.value"
+        :name="name"
+      />
+    </component>
 </template>
 
 <script>

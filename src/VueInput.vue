@@ -1,30 +1,23 @@
 <template>
-  <label
-    v-show="label"
-    :class="labelClass"
-  >
-    {{ label }}
-  </label>
-  <input
-    :value="modelValue"
-    v-bind="{
-      ...$attrs,
-      onInput: ($event => {
-        $emit('update:modelValue', $event.target.value)
-      })
-    }"
-    :class="inputClass"
-  >
-  <VueErrorMesssage
-    :error-messsage="errorMesssage"
-  />
+  <div>
+    <label
+      v-show="label"
+      :class="labelClass"
+    >
+      {{ label }}
+    </label>
+    <input
+      :value="modelValue"
+      v-bind="$attrs"
+      @input="updateInput"
+      :class="inputClass"
+    >
+  </div>
 </template>
 
 <script>
 export default {
   name: 'VueInput',
-
-  emits: ['update:modelValue'],
 
   props: {
     label: {
@@ -42,11 +35,19 @@ export default {
     modelValue: {
       type: [String, Number],
       default: '',
-    },
-    errorMesssage: {
-      type: String,
-      default: ''
+    }
+  },
+
+  setup (props, { emit }) {
+    const updateInput = (event) => {
+      const value = event.target.value
+      emit('update:modelValue', value)
+    }
+
+    return {
+      updateInput
     }
   }
 }
 </script>
+<style scoped></style>
