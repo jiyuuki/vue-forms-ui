@@ -1,4 +1,5 @@
 <template>
+  <div>
     <component
       :value="modelValue"
       @change="$emit('update:modelValue', option.value)"
@@ -12,6 +13,7 @@
         :name="name"
       />
     </component>
+  </div>
 </template>
 
 <script>

@@ -1,32 +1,34 @@
 <template>
-  <label
-    v-show="label"
-    :class="labelClass"
-  >
-    {{ label }}
-  </label>
-  <select
-    :value="modelValue"
-    v-bind="{
-      ...$attrs,
-      onChange: ($event) => {
-        $emit('update:modelValue', $event.target.value)
-      }
-    }"
-    :class="seletClass"
-  >
-    <option
-      v-for="option in options"
-      :value="option"
-      :key="option"
-      :selected="option === modelValue"
+  <div>
+    <label
+      v-show="label"
+      :class="labelClass"
     >
-      {{ option }}
-    </option>
-  </select>
-  <VueErrorMesssage
-    :error-messsage="errorMesssage"
-  />
+      {{ label }}
+    </label>
+    <select
+      :value="modelValue"
+      v-bind="{
+        ...$attrs,
+        onChange: ($event) => {
+          $emit('update:modelValue', $event.target.value)
+        }
+      }"
+      :class="seletClass"
+    >
+      <option
+        v-for="option in options"
+        :value="option"
+        :key="option"
+        :selected="option === modelValue"
+      >
+        {{ option }}
+      </option>
+    </select>
+    <VueErrorMesssage
+      :error-messsage="errorMesssage"
+    />
+  </div>
 </template>
 
 <script>

@@ -1,25 +1,27 @@
 <template>
   <div>
-    <span>{{ branch.label }}</span>
-    <span
-      v-show="hasChildren"
+    <div>
+      <span>{{ branch.label }}</span>
+      <span
+        v-show="hasChildren"
+      >
+        🌠
+      </span>
+      <!-- add toggle function to show or hide children -->
+      <!-- try to use a flat array -->
+      <!-- add and delete children -->
+    </div>
+    <div
+      v-if="hasChildren"
+      :style="{ marginLeft: `${addSpacing}px`}"
     >
-      🌠
-    </span>
-    <!-- add toggle function to show or hide children -->
-    <!-- try to use a flat array -->
-    <!-- add and delete children -->
-  </div>
-  <div
-    v-if="hasChildren"
-    :style="{ marginLeft: `${addSpacing}px`}"
-  >
-    <Tree
-      v-for="child in branch.children"
-      :key="child.id"
-      :branch="child"
-      :spacing="addSpacing"
-    />
+      <Tree
+        v-for="child in branch.children"
+        :key="child.id"
+        :branch="child"
+        :spacing="addSpacing"
+      />
+    </div>
   </div>
 </template>
 
