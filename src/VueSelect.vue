@@ -7,13 +7,9 @@
       {{ label }}
     </label>
     <select
+      v-bind="$attrs"
       :value="modelValue"
-      v-bind="{
-        ...$attrs,
-        onChange: ($event) => {
-          $emit('update:modelValue', $event.target.value)
-        }
-      }"
+      @change="updateSelect"
       :class="seletClass"
     >
       <option
@@ -34,8 +30,6 @@
 <script>
 export default {
   name: 'VueSelect',
-
-  emits: ['update:modelValue'],
 
   props: {
     label: {
@@ -61,6 +55,17 @@ export default {
     errorMesssage: {
       type: String,
       default: ''
+    }
+  },
+
+  setup (props, { emit }) {
+    const updateSelect = (event) => {
+      const selected = event.target.checked
+      emit('update:modelValue', selected) 
+    }
+
+    return {
+      updateSelect
     }
   }
 }

@@ -7,8 +7,8 @@
       {{ label }}
     </label>
     <input
-      :value="modelValue"
       v-bind="$attrs"
+      :value="modelValue"
       @change="updateCheckbox"
       type="checkbox"
       :class="inputClass"
@@ -50,4 +50,3 @@
     }
   }
 </script>
-<style scoped></style>

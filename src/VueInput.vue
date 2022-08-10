@@ -7,8 +7,8 @@
       {{ label }}
     </label>
     <input
-      :value="modelValue"
       v-bind="$attrs"
+      :value="modelValue"
       @input="updateInput"
       :class="inputClass"
     >
@@ -50,4 +50,3 @@ export default {
   }
 }
 </script>
-<style scoped></style>

@@ -1,7 +1,6 @@
 <template>
   <div>
     <input
-    v-model="modelValue"
     v-bind="$attrs"
     :value="value"
     @change="updateRadio"

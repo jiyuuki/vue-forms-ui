@@ -11,7 +11,7 @@
         :label="option.label"
         :value="option.value"
         :name="name"
-      />
+      />          
     </component>
   </div>
 </template>

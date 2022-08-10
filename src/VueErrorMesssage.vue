@@ -1,7 +1,9 @@
 <template>
-  <p class="errorMessage">
-    {{ errorMesssage }}
-  </p>
+  <div>
+    <p class="errorMessage">
+      {{ errorMesssage }}
+    </p>
+  </div>
 </template>
 
 <script>
