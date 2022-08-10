@@ -10,7 +10,6 @@
       v-bind="$attrs"
       :value="modelValue"
       @input="updateInput"
-      :class="inputClass"
     >
   </div>
 </template>
@@ -18,17 +17,13 @@
 <script>
 export default {
   name: 'VueInput',
-
+  inheritAttrs: false,
   props: {
     label: {
       type: String,
       default: '',
     },
     labelClass: {
-      type: String,
-      default: '',
-    },
-    inputClass: {
       type: String,
       default: '',
     },
