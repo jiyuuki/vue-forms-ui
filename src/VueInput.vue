@@ -17,7 +17,9 @@
 <script>
 export default {
   name: 'VueInput',
+
   inheritAttrs: false,
+
   props: {
     label: {
       type: String,

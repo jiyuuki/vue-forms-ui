@@ -11,7 +11,6 @@
       :value="modelValue"
       @change="updateCheckbox"
       type="checkbox"
-      :class="inputClass"
     >
   </div>
 </template>
@@ -19,16 +18,14 @@
   export default {
     name: 'VueCheckbox',
 
+    inheritAttrs: false,
+
     props: {
       label: {
         type: String,
         default: ''
       },
       labelClass: {
-        type: String,
-        default: ''
-      },
-      inputClass: {
         type: String,
         default: ''
       },

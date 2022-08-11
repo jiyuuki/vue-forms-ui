@@ -10,7 +10,6 @@
       v-bind="$attrs"
       :value="modelValue"
       @change="updateSelect"
-      :class="seletClass"
     >
       <option
         v-for="option in options"
@@ -31,6 +30,8 @@
 export default {
   name: 'VueSelect',
 
+  inheritAttrs: false,
+
   props: {
     label: {
       type: String,
@@ -40,10 +41,7 @@ export default {
       type: String,
       default: ''
     },
-    seletClass: {
-      type: String,
-      default: ''
-    },
+
     modelValue: {
       type: [String, Number, Boolean],
       default: ''
@@ -61,7 +59,7 @@ export default {
   setup (props, { emit }) {
     const updateSelect = (event) => {
       const selected = event.target.checked
-      emit('update:modelValue', selected) 
+      emit('update:modelValue', selected)
     }
 
     return {

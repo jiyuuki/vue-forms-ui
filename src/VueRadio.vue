@@ -18,6 +18,8 @@
 export default {
   name: 'VueRadio',
 
+  inheritAttrs: false,
+
   props: {
     label: {
       type: String,
