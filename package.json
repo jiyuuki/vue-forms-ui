@@ -1,6 +1,6 @@
 {
   "name": "vue-forms-ui",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "create form element",
   "private": false,
   "main": "index.js",

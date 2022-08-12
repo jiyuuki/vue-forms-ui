@@ -2,7 +2,7 @@
   <div>
     <component
       :value="modelValue"
-      @change="$emit('update:modelValue', option.value)"
+      @change="updateSelect(option)"
       v-for="option in options"
       :key="option"
       :is="vertical ? 'div' : 'span'"
@@ -20,8 +20,6 @@
 export default {
   name: 'VueRadioGroup',
 
-  emits: ['update:modelValue'],
-
   props: {
     name: {
       type: String,
@@ -38,6 +36,17 @@ export default {
     },
     vertical: {
       type: Boolean
+    }
+  },
+
+  setup (props, { emit }) {
+    const updateSelect = (option) => {
+      const valueSelected = option.value
+      emit('update:modelValue', valueSelected)
+    }
+
+    return {
+      updateSelect
     }
   }
 }
