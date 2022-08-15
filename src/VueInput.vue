@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <label
-      v-show="label"
-      :class="labelClass"
-    >
-      {{ label }}
-    </label>
-    <input
-      v-bind="$attrs"
-      :value="modelValue"
-      @input="updateInput"
-    >
-  </div>
+  <label
+    v-show="label"
+    :class="labelClass"
+  >
+    {{ label }}
+  </label>
+  <input
+    v-bind="$attrs"
+    :value="modelValue"
+    @input="updateInput"
+  >
 </template>
 
 <script>
@@ -19,6 +17,8 @@ export default {
   name: 'VueInput',
 
   inheritAttrs: false,
+
+  emits: ['update:modelValue'],
 
   props: {
     label: {

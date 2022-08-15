@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <label
-      v-show="label"
-      :class="labelClass"
+  <label
+    v-show="label"
+    :class="labelClass"
+  >
+    {{ label }}
+  </label>
+  <select
+    v-bind="$attrs"
+    :value="modelValue"
+    @change="updateSelect"
+  >
+    <option
+      v-for="option in options"
+      :value="option"
+      :key="option"
+      :selected="option === modelValue"
     >
-      {{ label }}
-    </label>
-    <select
-      v-bind="$attrs"
-      :value="modelValue"
-      @change="updateSelect"
-    >
-      <option
-        v-for="option in options"
-        :value="option"
-        :key="option"
-        :selected="option === modelValue"
-      >
-        {{ option }}
-      </option>
-    </select>
-    <VueErrorMesssage
-      :error-messsage="errorMesssage"
-    />
-  </div>
+      {{ option }}
+    </option>
+  </select>
+  <VueErrorMesssage
+    :error-messsage="errorMesssage"
+  />
 </template>
 
 <script>

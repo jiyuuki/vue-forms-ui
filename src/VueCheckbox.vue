@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <label
-      v-show="label"
-      :class="labelClass"
-    >
-      {{ label }}
-    </label>
-    <input
-      v-bind="$attrs"
-      :value="modelValue"
-      @change="updateCheckbox"
-      type="checkbox"
-    >
-  </div>
+  <label
+    v-show="label"
+    :class="labelClass"
+  >
+    {{ label }}
+  </label>
+  <input
+    v-bind="$attrs"
+    :value="modelValue"
+    @change="updateCheckbox"
+    type="checkbox"
+  >
 </template>
 <script>
   export default {

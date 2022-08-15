@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <input
-      v-bind="$attrs"
-      :value="value"
-      @change="updateRadio"
-      type="radio"
-    >
-    <label
-      v-show="label"
-    >
-      {{ label }}
-    </label>
-  </div>
+  <input
+    v-bind="$attrs"
+    :value="value"
+    @change="updateRadio"
+    type="radio"
+  >
+  <label
+    v-show="label"
+  >
+    {{ label }}
+  </label>
 </template>
 
 <script>
